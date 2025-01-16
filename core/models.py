@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.utils import timezone
 
 class Project(models.Model):
     title = models.CharField(max_length=300)
@@ -21,3 +21,13 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.full_name
+    
+
+
+class UserVisit(models.Model):
+    visit_count = models.PositiveIntegerField(default=0)
+    last_visit = models.DateTimeField(default=timezone.now)
+    ip_address = models.GenericIPAddressField(null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.visit_count} Visits on {self.last_visit.strftime('%Y-%m-%d %H:%M:%S')} from {self.ip_address}"
