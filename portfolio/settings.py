@@ -120,6 +120,9 @@ USE_I18N = True
 
 USE_TZ = True
 
+# Set the time zone to Algeria (GMT+1)
+TIME_ZONE = 'Africa/Algiers'
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
@@ -135,3 +138,5 @@ MEDIA_ROOT = os.getenv("MEDIA_ROOT", "media")
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
