@@ -30,4 +30,4 @@ class UserVisit(models.Model):
     ip_address = models.GenericIPAddressField(null=True, blank=True)
 
     def __str__(self):
-        return f"{self.visit_count} Visits on {self.last_visit.strftime('%Y-%m-%d %H:%M:%S')} from {self.ip_address}"
+        return f"{self.visit_count} Visits // Last one on {self.last_visit.strftime('%Y-%m-%d %H:%M:%S')} from {self.ip_address}"
