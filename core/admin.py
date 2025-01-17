@@ -13,4 +13,4 @@ class UserVisitAdmin(admin.ModelAdmin):
     
 admin.site.register(Project, ProjectAdmin)
 admin.site.register(Contact, ContactAdmin)
-admin.site.register(UserVisit,UserVisitAdmin)
+admin.site.register(UserVisit, UserVisitAdmin)

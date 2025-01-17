@@ -18,6 +18,7 @@ class Contact(models.Model):
     email = models.EmailField()
     phone = models.CharField(max_length=200, null=True)
     message = models.TextField()
+    created_at = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return self.full_name
