@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
     'core.apps.CoreConfig',
     'import_export',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

@@ -14,7 +14,7 @@ class Project(models.Model):
 
 
 class Contact(models.Model):
-    full_name = models.CharField(max_length=200)
+    full_name = models.CharField(max_length=200, null=True)
     email = models.EmailField()
     phone = models.CharField(max_length=200, null=True)
     message = models.TextField()
