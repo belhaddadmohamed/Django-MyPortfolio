@@ -14,16 +14,16 @@ class Project(models.Model):
 
 
 class Contact(models.Model):
-    full_name = models.CharField(max_length=200, null=True)
-    email = models.EmailField()
-    phone = models.CharField(max_length=200, null=True)
+    # full_name = models.CharField(max_length=200, null=True)
+    # phone = models.CharField(max_length=200, null=True)
     # subject = models.CharField(max_length=200, null=True)
+    email = models.EmailField()
     message = models.TextField()
     created_at = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
-        return self.full_name
-    
+        return self.email
+
 
 
 class UserVisit(models.Model):
