@@ -7,6 +7,9 @@ class Project(models.Model):
     image = models.ImageField(upload_to='project', null=True)
     github_link = models.URLField(null=True, blank=True)
     website_link = models.URLField(null=True, blank=True)
+    tags = models.CharField(max_length=200, null=True, blank=True)
+    read_time = models.PositiveIntegerField(null=True, blank=True, help_text="Estimated read time in minutes")
+    created_at = models.DateField(default=timezone.now)
 
     def __str__(self):
         return self.title

@@ -7,7 +7,7 @@ class ContactAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     readonly_fields = ['created_at']
 
 class ProjectAdmin(ImportExportModelAdmin, admin.ModelAdmin):
-    list_display = ['title', 'github_link']
+    list_display = ['title', 'github_link', 'website_link']
 
 class UserVisitAdmin(admin.ModelAdmin):
     list_display = [ 'ip_address', 'last_visit','visit_count']
