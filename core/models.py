@@ -15,6 +15,15 @@ class Project(models.Model):
         return self.title
     
 
+class Skill(models.Model):
+    title = models.CharField(max_length=200)
+    description = models.TextField()
+    image = models.FileField(upload_to='skill', null=True, blank=True)
+    published = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.title
+    
 
 class Contact(models.Model):
     # full_name = models.CharField(max_length=200, null=True)

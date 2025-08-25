@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 from rest_framework.permissions import IsAdminUser, AllowAny
-from ..models import Contact, Project
-from .serializers import ContactSerializer, ProjectSerializer
+from ..models import Contact, Project, Skill
+from .serializers import ContactSerializer, ProjectSerializer, SkillSerializer
 
 class ContactViewSet(viewsets.ModelViewSet):
     queryset = Contact.objects.all()
@@ -18,6 +18,18 @@ class ContactViewSet(viewsets.ModelViewSet):
 class ProjectViewSet(viewsets.ModelViewSet):
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
+
+    def get_permissions(self):
+        if self.action in ['list', 'retrieve']:
+            self.permission_classes = [AllowAny]
+        else:
+            self.permission_classes = [IsAdminUser]  # ['create', 'update', 'partial_update', 'destroy']
+        return super().get_permissions()
+    
+
+class SkillViewSet(viewsets.ModelViewSet):
+    queryset = Skill.objects.all()
+    serializer_class = SkillSerializer
 
     def get_permissions(self):
         if self.action in ['list', 'retrieve']:
