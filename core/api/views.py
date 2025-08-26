@@ -9,7 +9,7 @@ class ContactViewSet(viewsets.ModelViewSet):
 
     def get_permissions(self):
         if self.action == 'create':
-            self.permission_classes = [AllowAny]
+            self.permission_classes = [AllowAny, IsAdminUser]
         else:
             self.permission_classes = [IsAdminUser]
         return super().get_permissions()
