@@ -10,6 +10,8 @@ class Project(models.Model):
     tags = models.CharField(max_length=200, null=True, blank=True)
     read_time = models.PositiveIntegerField(null=True, blank=True, help_text="Estimated read time in minutes")
     created_at = models.DateField(default=timezone.now)
+    order = models.PositiveIntegerField(default=0, help_text="Order of appearance")
+    published = models.BooleanField(default=True)
 
     def __str__(self):
         return self.title

@@ -25,7 +25,7 @@ class ProjectViewSet(viewsets.ModelViewSet):
         else:
             self.permission_classes = [IsAdminUser]  # ['create', 'update', 'partial_update', 'destroy']
         return super().get_permissions()
-    
+
 
 class SkillViewSet(viewsets.ModelViewSet):
     queryset = Skill.objects.all()

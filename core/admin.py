@@ -7,13 +7,15 @@ class ContactAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     readonly_fields = ['created_at']
 
 class ProjectAdmin(ImportExportModelAdmin, admin.ModelAdmin):
-    list_display = ['title', 'github_link', 'website_link']
+    list_display = ['title', 'github_link', 'website_link', 'published', 'order']
+    list_editable = ['published', 'order']
 
 class UserVisitAdmin(admin.ModelAdmin):
     list_display = [ 'ip_address', 'last_visit','visit_count']
 
 class SkillAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     list_display = ['title', 'description', 'image', 'published']
+    list_editable = ['published']
     
 admin.site.register(Project, ProjectAdmin)
 admin.site.register(Contact, ContactAdmin)
