@@ -1,0 +1,58 @@
+[
+  {
+      "id": 1,
+      "title": "Google Data Analytics Professional Certificate",
+      "issuer": "Google",
+      "issue_date": "2025-01-01",
+      "certificate_link": "#",
+      "image": "certifications/cert_google.png"
+  },
+  {
+      "id": 2,
+      "title": "Data Analytics Bootcamp Certification",
+      "issuer": "Bootcamp",
+      "issue_date": "2025-01-01",
+      "certificate_link": "https://drive.google.com/file/d/1EZllvYoaBnnuMgkBS3QhmurAToAnOUMo/view?usp=sharing",
+      "image": "certifications/cert_analysis.png"
+  },
+  {
+      "id": 3,
+      "title": "IBM Data Analysis with Python",
+      "issuer": "IBM",
+      "issue_date": "2024-01-01",
+      "certificate_link": "#",
+      "image": "certifications/cert_ibm.jpg"
+  },
+  {
+      "id": 4,
+      "title": "Complete Data Science & ML Bootcamp",
+      "issuer": "Udemy / Instructor",
+      "issue_date": "2023-01-01",
+      "certificate_link": "https://www.udemy.com/certificate/UC-1ceaaac8-5cc6-48ee-9367-90a87b5dff59/",
+      "image": "certifications/cert_ds.png"
+  },
+  {
+      "id": 5,
+      "title": "Fundamentals of Deep Learning",
+      "issuer": "NVIDIA",
+      "issue_date": "2022-01-01",
+      "certificate_link": "https://learn.nvidia.com/certificates?id=0def23bc00744573a0c8170c04e72b15",
+      "image": "certifications/cert_dl.png"
+  },
+  {
+      "id": 6,
+      "title": "CCNA",
+      "issuer": "Cisco",
+      "issue_date": "2024-01-01",
+      "certificate_link": "https://www.credly.com/badges/de4230c0-af8b-4c54-804d-8dc989e3407b",
+      "image": "certifications/cert_cisco.png"
+  },
+  {
+      "id": 7,
+      "title": "ENTREPRENEURSHIP ENABLING & TRAINING CAMPAIGN",
+      "issuer": "Algeria Venture",
+      "issue_date": "2022-01-01",
+      "certificate_link": "https://drive.google.com/file/d/14jn1wrU5k8FqglZ9emNiLNnOg7zk6FHG/view?fbclid=IwAR1B94eRrbn8gUejZWjGfqypW3UegamTMaBoEm5hAXpSi_pxIE_rk7KXJvw",
+      "image": "certifications/cert_enterpreneur.png"
+  }
+]

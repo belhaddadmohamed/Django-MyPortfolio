@@ -15,7 +15,21 @@ class Project(models.Model):
 
     def __str__(self):
         return self.title
-    
+
+
+class Certificate(models.Model):
+    title = models.CharField(max_length=300)
+    description = models.TextField(null=True, blank=True)
+    image = models.ImageField(upload_to='certificate', null=True)
+    certificate_link = models.URLField(null=True, blank=True)
+    issuer = models.CharField(max_length=200, null=True, blank=True)
+    issue_date = models.DateField(null=True, blank=True)
+    order = models.PositiveIntegerField(default=0, help_text="Order of appearance")
+    published = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.title
+
 
 class Skill(models.Model):
     title = models.CharField(max_length=200)

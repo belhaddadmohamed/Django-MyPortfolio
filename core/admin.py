@@ -1,6 +1,6 @@
 from django.contrib import admin
 from import_export.admin import ImportExportModelAdmin
-from .models import Project, Contact, UserVisit, Skill
+from .models import Project, Contact, UserVisit, Skill, Certificate
 
 class ContactAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     list_display = ['email', 'message', 'created_at']
@@ -16,8 +16,13 @@ class UserVisitAdmin(admin.ModelAdmin):
 class SkillAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     list_display = ['title', 'description', 'image', 'published']
     list_editable = ['published']
+
+class CertificateAdmin(ImportExportModelAdmin, admin.ModelAdmin):
+    list_display = ['title', 'issuer', 'issue_date', 'published', 'order']
+    list_editable = ['published', 'order']  
     
 admin.site.register(Project, ProjectAdmin)
 admin.site.register(Contact, ContactAdmin)
 admin.site.register(UserVisit, UserVisitAdmin)
 admin.site.register(Skill, SkillAdmin)
+admin.site.register(Certificate, CertificateAdmin)
