@@ -18,8 +18,8 @@ class SkillAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     list_editable = ['published']
 
 class CertificateAdmin(ImportExportModelAdmin, admin.ModelAdmin):
-    list_display = ['title', 'issuer', 'issue_date', 'published', 'order']
-    list_editable = ['published', 'order']  
+    list_display = ['title', 'issuer', 'image', 'issue_date', 'published', 'order']
+    list_editable = ['published', 'order', 'image']  
     
 admin.site.register(Project, ProjectAdmin)
 admin.site.register(Contact, ContactAdmin)
