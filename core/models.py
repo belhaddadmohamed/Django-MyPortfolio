@@ -20,7 +20,7 @@ class Project(models.Model):
 class Certificate(models.Model):
     title = models.CharField(max_length=300)
     description = models.TextField(null=True, blank=True)
-    image = models.ImageField(upload_to='certificate', default='certificate/certificate.jpg', null=True)
+    image = models.ImageField(upload_to='certificate', default='certificate/certified.png', null=True)
     certificate_link = models.URLField(null=True, blank=True)
     issuer = models.CharField(max_length=200, null=True, blank=True)
     issue_date = models.DateField(null=True, blank=True)
