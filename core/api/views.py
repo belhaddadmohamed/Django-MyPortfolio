@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 from rest_framework.permissions import IsAdminUser, AllowAny
-from ..models import Certificate, Contact, Project, Skill
-from .serializers import CertificateSerializer, ContactSerializer, ProjectSerializer, SkillSerializer
+from ..models import Certificate, Contact, Newsletter, Project, Skill
+from .serializers import CertificateSerializer, ContactSerializer, NewsletterSerializer, ProjectSerializer, SkillSerializer
 
 class ContactViewSet(viewsets.ModelViewSet):
     queryset = Contact.objects.all()
@@ -49,3 +49,8 @@ class CertificateViewSet(viewsets.ModelViewSet):
         else:
             self.permission_classes = [IsAdminUser]  # ['create', 'update', 'partial_update', 'destroy']
         return super().get_permissions()
+    
+
+class NewsletterViewSet(viewsets.ModelViewSet):
+    queryset = Newsletter.objects.all()
+    serializer_class = NewsletterSerializer
