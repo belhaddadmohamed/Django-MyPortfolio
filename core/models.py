@@ -61,3 +61,12 @@ class UserVisit(models.Model):
 
     def __str__(self):
         return f"{self.visit_count} Visits // Last one on {self.last_visit.strftime('%Y-%m-%d %H:%M:%S')} from {self.ip_address}"
+    
+
+class Newsletter(models.Model):
+    email = models.EmailField(unique=True)
+    subscribed_at = models.DateTimeField(default=timezone.now)
+    is_active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.email
