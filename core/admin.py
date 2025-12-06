@@ -24,7 +24,7 @@ class CertificateAdmin(ImportExportModelAdmin, admin.ModelAdmin):
 class NewsletterAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     list_display = ['email', 'subscribed_at', 'is_active']
     list_editable = ['is_active']
-    
+
 admin.site.register(Project, ProjectAdmin)
 admin.site.register(Contact, ContactAdmin)
 admin.site.register(UserVisit, UserVisitAdmin)
