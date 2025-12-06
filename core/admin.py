@@ -3,7 +3,7 @@ from import_export.admin import ImportExportModelAdmin
 from .models import Newsletter, Project, Contact, UserVisit, Skill, Certificate
 
 class ContactAdmin(ImportExportModelAdmin, admin.ModelAdmin):
-    list_display = ['email', 'message', 'created_at']
+    list_display = ['email', 'subject', 'created_at']
     readonly_fields = ['created_at']
 
 class ProjectAdmin(ImportExportModelAdmin, admin.ModelAdmin):

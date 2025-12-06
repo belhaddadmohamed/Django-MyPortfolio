@@ -44,8 +44,8 @@ class Skill(models.Model):
 class Contact(models.Model):
     # full_name = models.CharField(max_length=200, null=True)
     # phone = models.CharField(max_length=200, null=True)
-    # subject = models.CharField(max_length=200, null=True)
     email = models.EmailField()
+    subject = models.CharField(max_length=200)
     message = models.TextField()
     created_at = models.DateTimeField(default=timezone.now)
 
