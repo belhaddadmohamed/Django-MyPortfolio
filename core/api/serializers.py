@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from core.models import Certificate, Contact, Project, Skill, Newsletter
+from core.models import Blog, Certificate, Contact, Project, Skill, Newsletter
 
 class ContactSerializer(serializers.ModelSerializer):
     class Meta:
@@ -28,4 +28,10 @@ class CertificateSerializer(serializers.ModelSerializer):
 class NewsletterSerializer(serializers.ModelSerializer):
     class Meta:
         model = Newsletter
+        fields = '__all__'
+
+
+class BlogSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Blog
         fields = '__all__'

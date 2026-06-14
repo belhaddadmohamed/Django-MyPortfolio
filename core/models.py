@@ -72,3 +72,17 @@ class Newsletter(models.Model):
         return self.email
     
 
+class Blog(models.Model):
+    title = models.CharField(max_length=300)
+    slug = models.SlugField(max_length=300, unique=True)
+    excerpt = models.TextField(null=True, blank=True)
+    content = models.TextField()
+    featured_image = models.ImageField(upload_to='blog', default='blog/default.jpg', null=True, blank=True)
+    tags = models.CharField(max_length=200, null=True, blank=True)
+    published = models.BooleanField(default=True)
+    created_at = models.DateTimeField(default=timezone.now)
+    updated_at = models.DateTimeField(auto_now=True)
+    order = models.PositiveIntegerField(default=0, help_text="Order of appearance")
+
+    def __str__(self):
+        return self.title

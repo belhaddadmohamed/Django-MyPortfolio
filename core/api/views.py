@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 from rest_framework.permissions import IsAdminUser, AllowAny
-from ..models import Certificate, Contact, Newsletter, Project, Skill
-from .serializers import CertificateSerializer, ContactSerializer, NewsletterSerializer, ProjectSerializer, SkillSerializer
+from ..models import Blog, Certificate, Contact, Newsletter, Project, Skill
+from .serializers import BlogSerializer, CertificateSerializer, ContactSerializer, NewsletterSerializer, ProjectSerializer, SkillSerializer
 
 class ContactViewSet(viewsets.ModelViewSet):
     queryset = Contact.objects.all()
@@ -69,7 +69,24 @@ class CertificateViewSet(viewsets.ModelViewSet):
             return Certificate.objects.all()
         return Certificate.objects.filter(published=True)    
     
-    
+
+class BlogViewSet(viewsets.ModelViewSet):
+    queryset = Blog.objects.all()
+    serializer_class = BlogSerializer
+
+    def get_permissions(self):
+        if self.action in ['list', 'retrieve']:
+            self.permission_classes = [AllowAny]
+        else:
+            self.permission_classes = [IsAdminUser]  # ['create', 'update', 'partial_update', 'destroy']
+        return super().get_permissions()
+
+    # Avoid exposing unpublished blog posts to non-amdin users
+    def get_queryset(self):
+        if self.request.user and self.request.user.is_staff:
+            return Blog.objects.all()
+        return Blog.objects.filter(published=True)    
+
 
 class NewsletterViewSet(viewsets.ModelViewSet):
     queryset = Newsletter.objects.all()
