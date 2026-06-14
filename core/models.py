@@ -75,9 +75,10 @@ class Newsletter(models.Model):
 class Blog(models.Model):
     title = models.CharField(max_length=300)
     slug = models.SlugField(max_length=300, unique=True)
+    author = models.CharField(max_length=200, null=True, blank=True)
     excerpt = models.TextField(null=True, blank=True)
     content = models.TextField()
-    featured_image = models.ImageField(upload_to='blog', default='blog/default.jpg', null=True, blank=True)
+    image = models.ImageField(upload_to='blog', default='blog/default.png', null=True, blank=True)
     tags = models.CharField(max_length=200, null=True, blank=True)
     published = models.BooleanField(default=True)
     created_at = models.DateTimeField(default=timezone.now)
