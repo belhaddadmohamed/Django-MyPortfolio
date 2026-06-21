@@ -29,9 +29,14 @@ class BlogAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     list_display = ['title', 'published', 'created_at']
     list_editable = ['published']
 
+class CertificateAdmin(ImportExportModelAdmin, admin.ModelAdmin):
+    list_display = ['title', 'issuer', 'image', 'issue_date', 'published', 'order']
+    list_editable = ['published', 'order', 'image']  
+
 admin.site.register(Project, ProjectAdmin)
 admin.site.register(Contact, ContactAdmin)
 admin.site.register(UserVisit, UserVisitAdmin)
 admin.site.register(Skill, SkillAdmin)
 admin.site.register(Blog, BlogAdmin)
 admin.site.register(Newsletter, NewsletterAdmin)
+admin.site.register(Certificate, CertificateAdmin)
