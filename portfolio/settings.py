@@ -92,6 +92,10 @@ WSGI_APPLICATION = "portfolio.wsgi.application"
 #     }
 # }
 
+import pymysql
+pymysql.install_as_MySQLdb()
+
+
 if os.getenv("MYSQL_DATABASE"):
     DATABASES = {
         "default": {
